@@ -243,6 +243,20 @@ Headers:
   Content-Length: length
  
 ```
+<br/>
+### PowerShell scenarios
+
+#### Get Folders
+
+```
+$folderurl="/sites/MySite/MydocLib/MyFolder %1"
+$rpFolder = [Microsoft.SharePoint.Client.ResourcePath]::FromDecodedUrl($folderurl)
+$CurrentFolder = $ctx.web.GetFolderByServerRelativePath($rpFolder)
+$Ctx.Load($CurrentFolder)
+$Ctx.ExecuteQuery()
+
+```
+<br/>
 
 ## See also
 
